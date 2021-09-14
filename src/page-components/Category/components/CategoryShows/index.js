@@ -30,6 +30,7 @@ function CategoryShows({ shows, description }) {
             flexDirection="row"
             justifyContent="space-between"
             alignItems="top"
+            alignContent="space-between"
             flexWrap="wrap"
           >
             {shows &&

@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-import { Box } from '@rebass/grid';
-import spacing from 'styling/spacing';
 import screen from 'styling/screen';
-
-export const StyledFlex=styled(Box)`
-    max-width:95%;
-`;
+import spacing from 'styling/spacing';
+import { Box } from '@rebass/grid';
 
 export const StyledImage=styled.img`
     width:100%;

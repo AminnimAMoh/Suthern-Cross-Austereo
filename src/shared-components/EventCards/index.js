@@ -2,14 +2,11 @@ import { Flex, Box } from '@rebass/grid';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Paragraph from 'shared-components/Typography/Paragraph';
-import { TextWrapper, StyledImage, StyledFlex } from './styled';
+import { TextWrapper, StyledImage, StyledBox } from './styled';
 
 function EventCards({ name, discription, url }) {
   return (
-    <Box width={[1 / 2, 1 / 3, 1 / 4, 1 / 5]} mt="2">
-      <Box
-        width={.95}
-      >
+    <Box width={[.49, .32, .24, .19]} mt="2">
         <StyledImage src={url} alt="content" />
         <TextWrapper>
           <Paragraph
@@ -27,7 +24,6 @@ function EventCards({ name, discription, url }) {
             linesToShow="3"
           />
         </TextWrapper>
-      </Box>
     </Box>
   );
 }
