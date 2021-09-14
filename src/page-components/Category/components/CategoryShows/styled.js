@@ -18,7 +18,7 @@ export const StyledBox = styled(Box)`
 `;
 export const TextWrapper = styled.div`
    margin-bottom: 12px;
-
+    margin-left: 7px;
    ${screen.mobile} {
     margin-bottom: 0;
   }

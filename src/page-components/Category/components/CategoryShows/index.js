@@ -22,7 +22,6 @@ function CategoryShows({ shows, description }) {
     }
     return 0;
   });
-  console.log(sortedShows);
   return (
     <StyledCategoryShows>
       <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
