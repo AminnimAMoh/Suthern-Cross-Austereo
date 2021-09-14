@@ -7,14 +7,18 @@ import React from 'react';
 import { StyledBox, StyledCategoryShows, TextWrapper } from './styled';
 
 function CategoryShows({ shows, description }) {
-  console.log(shows);
   return (
     <StyledCategoryShows>
       <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
-        <StyledBox width={[1, 0.65, 0.65]}>
+        <StyledBox width={1}>
           {shows && (
             <TextWrapper>
-              <Header text={`${shows.length} Podcasts`} variant="s" mt="2"/>
+              <Header
+                text={`${shows.length} Podcasts`}
+                variant="s"
+                mt="m"
+                mb="m"
+              />
             </TextWrapper>
           )}
           {description && (
@@ -22,22 +26,31 @@ function CategoryShows({ shows, description }) {
               <Paragraph text={description} variant="l" transparent />
             </TextWrapper>
           )}
-          <Flex justifyContent="space-between" alignItems="left" flexWrap="wrap">
-          {shows &&
-            shows.map(
-              ({
-                name,
-                description,
-                images: {
-                  squareLarge: { url },
-                },
-              }) => {
-                return (
-                  <EventCards name={name} discription={description} url={url}/>
-                );
-              }
-            )}
-            </Flex>
+          <Flex
+            flexDirection="row"
+            justifyContent="left"
+            alignItems="top"
+            flexWrap="wrap"
+          >
+            {shows &&
+              shows.map(
+                ({
+                  name,
+                  description,
+                  images: {
+                    squareLarge: { url },
+                  },
+                }) => {
+                  return (
+                    <EventCards
+                      name={name}
+                      discription={description}
+                      url={url}
+                    />
+                  );
+                }
+              )}
+          </Flex>
         </StyledBox>
       </Flex>
     </StyledCategoryShows>

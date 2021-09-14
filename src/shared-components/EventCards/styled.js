@@ -5,7 +5,7 @@ import screen from 'styling/screen';
 
 export const StyledImage=styled.img`
     width:100%;
-    border-radius:12px
+    border-radius:1em;
 `;
 export const TextWrapper = styled.div`
    margin-bottom: 12px;
