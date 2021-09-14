@@ -1,13 +1,26 @@
+import { Flex, Box } from '@rebass/grid';
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paragraph from 'shared-components/Typography/Paragraph';
+import Header from 'shared-components/Typography/Header';
+import { TextWrapper } from './styled';
 
 function EventCards({ name, discription, url }) {
   return (
-    <div>
-      <img src={url} alt="content" />
-      <h1>{name}</h1>
-      <h1>{discription}</h1>
-    </div>
+    <Box>
+      <Flex
+        flexDirection="column"
+        justifyContent="space-between"
+        alignItems="center"
+        flexWrap="wrap"
+      >
+        <img src={url} alt="content" />
+        <TextWrapper>
+          <Header text={name} variant="s" mt="2" linesToShow="1" />
+          <Paragraph text={discription} variant="m" mt="2" mb="2" linesToShow="3" />
+        </TextWrapper>
+      </Flex>
+    </Box>
   );
 }
 
