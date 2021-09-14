@@ -7,7 +7,7 @@ import React from 'react';
 import { StyledBox, StyledCategoryShows, TextWrapper } from './styled';
 
 function CategoryShows({ shows, description }) {
-  const [sortedShows, setSortedShows]=React.useState(shows);
+  const [sortedShows, setSortedShows]=React.useState(null);
   React.useEffect(() => {
     const sordetData = shows.sort((a, b) => {
       // First, we have to convert the both indexes name key to lower case
