@@ -12,15 +12,15 @@ function EventCards({ name, discription, url }) {
           <Paragraph
             text={name}
             variant="m"
-            mt="2"
+            mt="xs"
             fontWeight={700}
             linesToShow="1"
           />
           <Paragraph
             text={discription}
             variant="m"
-            mt="2"
-            mb="2"
+            mt="xs"
+            mb="xs"
             linesToShow="3"
           />
         </TextWrapper>

@@ -7,21 +7,26 @@ import React from 'react';
 import { StyledBox, StyledCategoryShows, TextWrapper } from './styled';
 
 function CategoryShows({ shows, description }) {
-  const sortedShows = shows.sort((a, b) => {
-    // First, we have to convert the both indexes name key to lower case
-    // so they always comparable
-    let aName = a.name.toLowerCase(),
-      bName = b.name.toLowerCase();
-    // Then we can compare them and return the -1,1 0 depending on the
-    // string comparison.
-    if (aName < bName) {
-      return -1;
-    }
-    if (aName > bName) {
-      return 1;
-    }
-    return 0;
+  const [sortedShows, setSortedShows]=React.useState(null);
+  React.useEffect(() => {
+    const sordetData = shows.sort((a, b) => {
+      // First, we have to convert the both indexes name key to lower case
+      // so they always comparable
+      let aName = a.name.toLowerCase(),
+        bName = b.name.toLowerCase();
+      // Then we can compare them and return the -1,1 0 depending on the
+      // string comparison.
+      if (aName < bName) {
+        return -1;
+      }
+      if (aName > bName) {
+        return 1;
+      }
+      return 0;
+    });
+    setSortedShows(sordetData)
   });
+
   return (
     <StyledCategoryShows>
       <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
@@ -47,7 +52,7 @@ function CategoryShows({ shows, description }) {
             alignItems="top"
             flexWrap="wrap"
           >
-            {shows &&
+            {sortedShows &&
               sortedShows.map(
                 ({
                   name,
@@ -58,6 +63,7 @@ function CategoryShows({ shows, description }) {
                 }) => {
                   return (
                     <EventCards
+                      key={name}
                       name={name}
                       discription={description}
                       url={url}
