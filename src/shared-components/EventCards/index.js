@@ -14,14 +14,14 @@ function EventCards({ name, discription, url }) {
             variant="m"
             mt="xs"
             fontWeight={700}
-            linesToShow="1"
+            linesToShow={3}
           />
           <Paragraph
             text={discription}
             variant="m"
             mt="xs"
             mb="xs"
-            linesToShow="3"
+            linesToShow={3}
           />
         </TextWrapper>
     </StyledBox>
