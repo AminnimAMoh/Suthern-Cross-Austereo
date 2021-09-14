@@ -7,6 +7,22 @@ import React from 'react';
 import { StyledBox, StyledCategoryShows, TextWrapper } from './styled';
 
 function CategoryShows({ shows, description }) {
+  const sortedShows = shows.sort((a, b) => {
+    // First, we have to convert the both indexes name key to lower case
+    // so they always comparable
+    let aName = a.name.toLowerCase(),
+      bName = b.name.toLowerCase();
+    // Then we can compare them and return the -1,1 0 depending on the
+    // string comparison.
+    if (aName < bName) {
+      return -1;
+    }
+    if (aName > bName) {
+      return 1;
+    }
+    return 0;
+  });
+  console.log(sortedShows);
   return (
     <StyledCategoryShows>
       <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
@@ -33,7 +49,7 @@ function CategoryShows({ shows, description }) {
             flexWrap="wrap"
           >
             {shows &&
-              shows.map(
+              sortedShows.map(
                 ({
                   name,
                   description,
