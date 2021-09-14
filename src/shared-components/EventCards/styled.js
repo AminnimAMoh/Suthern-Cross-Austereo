@@ -3,6 +3,10 @@ import { Box } from '@rebass/grid';
 import spacing from 'styling/spacing';
 import screen from 'styling/screen';
 
+export const StyledFlex=styled(Box)`
+    max-width:95%;
+`;
+
 export const StyledImage=styled.img`
     width:100%;
     border-radius:1em;

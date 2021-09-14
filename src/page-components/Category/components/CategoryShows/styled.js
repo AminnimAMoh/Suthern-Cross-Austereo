@@ -15,8 +15,6 @@ export const StyledCategoryShows = styled(Box)`
 
 export const StyledBox = styled(Box)`
    max-width: 100%;
-
-
 `;
 export const TextWrapper = styled.div`
    margin-bottom: 12px;
