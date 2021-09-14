@@ -25,7 +25,7 @@ function CategoryShows({ shows, description }) {
       return 0;
     });
     setSortedShows(sordetData)
-  });
+  }, [shows]);
 
   return (
     <StyledCategoryShows>
