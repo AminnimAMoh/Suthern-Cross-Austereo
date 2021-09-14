@@ -1,6 +1,7 @@
 import { Flex } from '@rebass/grid';
 import Paragraph from 'shared-components/Typography/Paragraph';
 import Header from 'shared-components/Typography/Header';
+import EventCards from 'shared-components/EventCards';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyledBox, StyledCategoryShows, TextWrapper } from './styled';
@@ -21,6 +22,7 @@ function CategoryShows({ shows, description }) {
               <Paragraph text={description} variant="l" transparent />
             </TextWrapper>
           )}
+          <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
           {shows &&
             shows.map(
               ({
@@ -31,12 +33,11 @@ function CategoryShows({ shows, description }) {
                 },
               }) => {
                 return (
-                  <TextWrapper>
-                    <Paragraph text={name} variant="l" transparent />
-                  </TextWrapper>
+                  <EventCards name={name} discription={description} url={url}/>
                 );
               }
             )}
+            </Flex>
         </StyledBox>
       </Flex>
     </StyledCategoryShows>
