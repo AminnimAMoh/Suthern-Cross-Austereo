@@ -22,7 +22,7 @@ function CategoryShows({ shows, description }) {
               <Paragraph text={description} variant="l" transparent />
             </TextWrapper>
           )}
-          <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
+          <Flex justifyContent="space-between" alignItems="left" flexWrap="wrap">
           {shows &&
             shows.map(
               ({
