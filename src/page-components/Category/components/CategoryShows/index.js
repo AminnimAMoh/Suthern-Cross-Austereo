@@ -28,9 +28,8 @@ function CategoryShows({ shows, description }) {
           )}
           <Flex
             flexDirection="row"
-            justifyContent="space-between"
+            justifyContent="start"
             alignItems="top"
-            alignContent="space-between"
             flexWrap="wrap"
           >
             {shows &&

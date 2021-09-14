@@ -6,7 +6,7 @@ import { TextWrapper, StyledImage, StyledBox } from './styled';
 
 function EventCards({ name, discription, url }) {
   return (
-    <Box width={[.49, .32, .24, .19]} mt="2">
+    <StyledBox width={[.50, .33, .25, .20]} mt="2">
         <StyledImage src={url} alt="content" />
         <TextWrapper>
           <Paragraph
@@ -24,7 +24,7 @@ function EventCards({ name, discription, url }) {
             linesToShow="3"
           />
         </TextWrapper>
-    </Box>
+    </StyledBox>
   );
 }
 
