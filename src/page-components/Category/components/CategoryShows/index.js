@@ -1,5 +1,6 @@
 import { Flex } from '@rebass/grid';
 import Paragraph from 'shared-components/Typography/Paragraph';
+import Header from 'shared-components/Typography/Header';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyledBox, StyledCategoryShows, TextWrapper } from './styled';
@@ -10,19 +11,32 @@ function CategoryShows({ shows, description }) {
     <StyledCategoryShows>
       <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
         <StyledBox width={[1, 0.65, 0.65]}>
+          {shows && (
+            <TextWrapper>
+              <Header text={`${shows.length} Podcasts`} variant="s" mt="2"/>
+            </TextWrapper>
+          )}
           {description && (
             <TextWrapper>
               <Paragraph text={description} variant="l" transparent />
             </TextWrapper>
           )}
           {shows &&
-            shows.map(({name, description, images:{squareLarge:{url}}}) => {
-              return (
-              <TextWrapper>
-                <Paragraph text={name} variant="l" transparent />
-              </TextWrapper>
-              );
-            })}
+            shows.map(
+              ({
+                name,
+                description,
+                images: {
+                  squareLarge: { url },
+                },
+              }) => {
+                return (
+                  <TextWrapper>
+                    <Paragraph text={name} variant="l" transparent />
+                  </TextWrapper>
+                );
+              }
+            )}
         </StyledBox>
       </Flex>
     </StyledCategoryShows>
